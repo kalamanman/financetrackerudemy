@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { useSignup } from '../../hooks/useSignup'
 //styles
 import styles from './SignUp.module.css'
 const SignUp = () => {
@@ -6,10 +7,12 @@ const SignUp = () => {
     const[displayName,setDisplayName] =useState('')
     const[email,setEmail] =useState('')
     const[password,setPassword] =useState('')
-
+     //useSignup hook
+     const {error,isPending,signup} =useSignup()
+     //submitting the form
     const handleSubmit=(e)=>{
         e.preventDefault()
-        console.log(displayName,email, password)
+        signup(email,password,displayName)
     }
 
 
@@ -39,8 +42,16 @@ const SignUp = () => {
               value={password}
               onChange={(e)=>setPassword(e.target.value)}
             />
-        </label>
-        <button className=' button'>Signup</button>
+        </label>{
+          isPending?
+            <button className=' button btn disabled'>wait is loading</button>
+            : <button className='button'>Signup</button>
+        }
+        
+      
+           
+
+        {error &&<div>{error}</div> }
         </form>
   )
 }
