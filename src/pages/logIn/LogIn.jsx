@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import { useAuthContext } from '../../hooks/useAuthContext'
+import { useLogin } from '../../hooks/useLogin'
 //styles
 import styles from './LogIn.module.css'
  //state
@@ -8,10 +10,11 @@ const LogIn = () => {
 
     const[email,setEmail] =useState('')
     const[password,setPassword] =useState('')
-
+    const{error,isPending,login} = useLogin()
+  
     const handleSubmit=(e)=>{
         e.preventDefault()
-        console.log(email, password)
+        login(email, password)
     }
 
   return (
