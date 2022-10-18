@@ -1,0 +1,60 @@
+.container{
+    display: flex;
+    max-width: 960px;
+    margin: 60px auto;
+    
+}
+
+.content{
+    flex:2;
+    background: grey;
+    padding-right: 30px;
+}
+
+.side{
+    flex:1;
+    
+    padding-left: 30px;
+}
+.side form {
+    padding: 20px;
+    background-color: #1f9751;
+    border-radius: 10px;
+}
+
+.side input , .side select {
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    
+    padding: 10px;
+    margin-top: 10px;
+    color: #555;
+    border: 0;
+    border-radius: 5px;
+}
+.side label{
+    display: block;
+    margin:0 auto 20px;
+    color: #fff;
+}
+.side h3 {
+    color:#1f9751;
+    margin-bottom: 20px;
+}
+.side button{
+    display: block;
+    width: 100%;
+    border: 1px solid #fff;
+    color:#fff;
+    border-radius: 4px;
+    cursor: pointer;
+    background: transparent;
+}
+.side .aside{
+    margin-top: 40px;
+    color:#555;
+}
+.side .aside li{
+    margin: 10px;
+}
