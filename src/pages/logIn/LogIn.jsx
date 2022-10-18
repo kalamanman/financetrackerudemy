@@ -18,7 +18,9 @@ const LogIn = () => {
     }
 
   return (
+
     <form className={styles['login-form']}
+    
      onSubmit={handleSubmit}
     >
         <h2>Login</h2>
@@ -26,6 +28,7 @@ const LogIn = () => {
             <span>Email</span>
             <input type="email" name="email" id="email"
               value={email}
+              required
               onChange={(e)=>setEmail(e.target.value)}
             />
         </label>
@@ -33,10 +36,14 @@ const LogIn = () => {
             <span>Password</span>
             <input type="password" name="password" id="password"
               value={password}
+              required
               onChange={(e)=>setPassword(e.target.value)}
             />
         </label>
-        <button className=' button'>Login</button>
+        {isPending ?
+        <button className=' button disabled'>Loading.. wait!</button>:
+        <button className=' button '>Login</button>}
+        {error && <p>{error}</p> }
 
     </form>
   )

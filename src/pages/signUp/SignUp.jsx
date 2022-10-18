@@ -26,6 +26,7 @@ const SignUp = () => {
             <span>Display Name</span>
             <input type="text" name="displayName" id="email"
               value={displayName}
+              required
               onChange={(e)=>setDisplayName(e.target.value)}
             />
         </label>
@@ -33,6 +34,7 @@ const SignUp = () => {
             <span>Email</span>
             <input type="email" name="email" id="email"
               value={email}
+              required
               onChange={(e)=>setEmail(e.target.value)}
             />
         </label>
@@ -40,6 +42,7 @@ const SignUp = () => {
             <span>Password</span>
             <input type="password" name="password" id="password"
               value={password}
+              required
               onChange={(e)=>setPassword(e.target.value)}
             />
         </label>{
