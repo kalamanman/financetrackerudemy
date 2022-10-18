@@ -6,18 +6,7 @@ import 'firebase/auth'
 
 const firebaseConfig = {
 
-  apiKey: "AIzaSyCPQf97769UKBPD0C0X8gbWH1bcth-MQNQ",
-
-  authDomain: "mymoney-24acf.firebaseapp.com",
-
-  projectId: "mymoney-24acf",
-
-  storageBucket: "mymoney-24acf.appspot.com",
-
-  messagingSenderId: "1061592144517",
-
-  appId: "1:1061592144517:web:10041ffc8921649cf267ec"
-
+ //your config goes here
 };
 
 firebase.initializeApp(firebaseConfig)
