@@ -8,9 +8,10 @@ import SignUp from './pages/signUp/SignUp'
 
 function App() {
      
-     const {user} = useAuthContext()
+     const {user,authIsReady} = useAuthContext()
   return (
     <div className="App">
+      {authIsReady && (
         <BrowserRouter>
         <Navbar/>
          <Routes>
@@ -20,6 +21,7 @@ function App() {
           <Route path='*' element={<><h1> page not found status 404</h1></>}/>
          </Routes>
         </BrowserRouter>
+      )}
       </div>
 
     
