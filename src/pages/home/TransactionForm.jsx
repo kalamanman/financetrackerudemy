@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useFirestore } from '../../hooks/useFirestore'
-import { useCollection } from '../../hooks/useCollection'
+
 
 const TransactionForm = ({uid}) => {
   const[name,setName]=useState('')
   const[amount,setAmount]=useState('')
   const {response,addDocument} =useFirestore('transactions')
-  const {docs,error,isPending} =useCollection('transactions')
 
   const handleSubmit=(e)=>{
     e.preventDefault()
@@ -21,7 +20,7 @@ const TransactionForm = ({uid}) => {
   },[response.success])
  
 
-  console.log(docs)
+ 
   return (
     <div>
      

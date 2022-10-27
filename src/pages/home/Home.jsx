@@ -1,15 +1,21 @@
 import React from 'react'
+import{useCollection} from '../../hooks/useCollection'
 import { useAuthContext } from '../../hooks/useAuthContext'
+import TransactionForm from './TransactionForm'
+import TransactionsList from './TransactionsList'
 //styles
 import styles from './Home.module.css'
-import TransactionForm from './TransactionForm'
+
 const Home = () => {
   const {user} =useAuthContext()
+  const {docs,error,isPending} =useCollection('transactions')
+  console.log(docs)
+ 
   const uid= user.uid
   return (
     <div className={styles.container}>
       <section className={styles.content}>
-        content
+       {docs && <TransactionsList transactions={docs}/>}
       </section>
       <section className={styles.side} >
         <TransactionForm uid={uid}/>
