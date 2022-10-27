@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useFirestore } from '../../hooks/useFirestore'
+import { useCollection } from '../../hooks/useCollection'
 
 const TransactionForm = ({uid}) => {
   const[name,setName]=useState('')
@@ -17,9 +18,9 @@ const TransactionForm = ({uid}) => {
       setName('')
     }
   },[response.success])
- 
+ const {docs} =useCollection('transactions')
 
-
+  console.log(docs)
   return (
     <div>
      

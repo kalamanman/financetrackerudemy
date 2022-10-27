@@ -26,6 +26,8 @@ export const useFirestore = (collection) => {
     const [response,dispatch] = useReducer(firestoreReducer,initialState)
     const [isCancelled,setIsCancelled] =useState(false)
     console.log('response :',response,isCancelled)
+    
+    
 
     const dispatchIfNotCancelled =(action)=>{
         if (!isCancelled){
@@ -67,11 +69,14 @@ export const useFirestore = (collection) => {
 
 
     
-    
+   
+
     return {response,addDocument,deleteDocument}
-    //this line of code has to be after the return statement
     useEffect(()=>{
+        
         return ()=> setIsCancelled(true)
     },[])
-
+    
+    //this line of code has to be after the return statement
+    
 }
