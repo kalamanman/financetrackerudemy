@@ -8,8 +8,12 @@ const TransactionsList = ({transactions}) => {
          { transactions.map(transaction=>(
             <li key={transaction.id}>
                 <span className={styles.name} >{transaction.name} </span>
+                
                 <span className={styles.amount} >$ {transaction.amount}</span>
+            
+                <button>X</button>
             </li>
+
           ))}
 
 
