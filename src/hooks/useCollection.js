@@ -1,12 +1,17 @@
-import {useState,useEffect} from 'react'
+import {useState,useEffect, useRef} from 'react'
 import { storeRef } from '../firebase/config'
-export const useCollection =(collection)=>{
+export const useCollection =(collection,_query)=>{
     const[docs,setDocs]=useState([])
      const[error,setError]=useState(null)
      const [isPending,setIsPending]=useState(false)
+   const uidEqualsUserId =useRef(_query).current
 
+ console.log(uidEqualsUserId)
     useEffect(()=>{
-const ref = storeRef.collection(collection)
+let ref = storeRef.collection(collection)
+if(uidEqualsUserId){
+    ref=ref.where(...uidEqualsUserId )
+}
 const unsub =ref.onSnapshot((snapshot)=>{
     setIsPending(true)
    let results =[]
@@ -22,6 +27,6 @@ const unsub =ref.onSnapshot((snapshot)=>{
     
 })
 return ()=> unsub()
-    },[collection])
+    },[collection,uidEqualsUserId])
     return {docs,error,isPending}
 }

@@ -8,10 +8,12 @@ import styles from './Home.module.css'
 
 const Home = () => {
   const {user} =useAuthContext()
-  const {docs,error,isPending} =useCollection('transactions')
+  const uid= user.uid
+  const {docs,error,isPending} =useCollection('transactions',
+  ["uid","==",user.uid])
   console.log(docs)
  
-  const uid= user.uid
+  
   return (
     <div className={styles.container}>
       <section className={styles.content}>
