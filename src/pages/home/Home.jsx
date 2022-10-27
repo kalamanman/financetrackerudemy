@@ -10,7 +10,7 @@ const Home = () => {
   const {user} =useAuthContext()
   const uid= user.uid
   const {docs,error,isPending} =useCollection('transactions',
-  ["uid","==",user.uid])
+  ["uid","==",user.uid],["createdAt","desc"])
   console.log(docs)
  
   

@@ -1,16 +1,19 @@
 import {useState,useEffect, useRef} from 'react'
 import { storeRef } from '../firebase/config'
-export const useCollection =(collection,_query)=>{
+export const useCollection =(collection,_query,_orderBy)=>{
     const[docs,setDocs]=useState([])
      const[error,setError]=useState(null)
      const [isPending,setIsPending]=useState(false)
    const uidEqualsUserId =useRef(_query).current
-
- console.log(uidEqualsUserId)
+  const descending =useRef(_orderBy).current
+ 
     useEffect(()=>{
 let ref = storeRef.collection(collection)
 if(uidEqualsUserId){
     ref=ref.where(...uidEqualsUserId )
+}
+if(descending){
+    ref.orderBy(...descending)
 }
 const unsub =ref.onSnapshot((snapshot)=>{
     setIsPending(true)
@@ -27,6 +30,6 @@ const unsub =ref.onSnapshot((snapshot)=>{
     
 })
 return ()=> unsub()
-    },[collection,uidEqualsUserId])
+    },[collection,uidEqualsUserId,descending])
     return {docs,error,isPending}
 }
