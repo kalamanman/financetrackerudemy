@@ -11,13 +11,13 @@ const initialState = {
  const firestoreReducer =(state,action)=>{
     switch(action.type){
         case 'ADDED_DOCUMENT':
-            return {...state,success:true,isPending:false,
+            return {success:true,isPending:false,
                     error:null,document:action.payload}
         case 'IS_PENDING':
-            return{...state,isPending:true,error:null,success:false}
+            return{document:null,isPending:true,error:null,success:null}
         case 'ERROR' :
             return{...state,error:action.payload,
-                success:false,isPending:false}   
+                success:null,isPending:false,document:null}   
                 default:
                     return {...state}
     }
@@ -25,25 +25,32 @@ const initialState = {
 export const useFirestore = (collection) => {
     const [response,dispatch] = useReducer(firestoreReducer,initialState)
     const [isCancelled,setIsCancelled] =useState(false)
-    console.log('response :',response)
+    console.log('response :',response,isCancelled)
 
     const dispatchIfNotCancelled =(action)=>{
-        if(!isCancelled)
-        {dispatch(action)}
+        if (!isCancelled){
+            dispatch(action)
+            
+        }
+       
     }
  
      const ref=storeRef.collection(collection)
    //Add a document
    const addDocument = async(doc)=>{
-        dispatch({type:'IS_PENDING' })
+       dispatchIfNotCancelled({type:'IS_PENDING'})
     try{
-        const createdAt =timestamp.fromDate(new Date())
+    
+        const createdAt =  timestamp.fromDate(new Date())
         const addedDocREf = await ref.add({...doc,createdAt})
-        dispatch({type:'ADDED_DOCUMENT',payload:addedDocREf})
+        
+            dispatchIfNotCancelled({type:'ADDED_DOCUMENT',payload:addedDocREf})
+    
+         
 
     }
     catch(err){
-        dispatch({
+        dispatchIfNotCancelled({
             type:'ERROR',payload:err.message
         })
     }
@@ -60,9 +67,11 @@ export const useFirestore = (collection) => {
 
 
     
+    
+    return {response,addDocument,deleteDocument}
+    //this line of code has to be after the return statement
     useEffect(()=>{
         return ()=> setIsCancelled(true)
     },[])
-    return {response,addDocument,deleteDocument}
 
 }
