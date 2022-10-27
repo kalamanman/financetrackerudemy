@@ -6,6 +6,7 @@ const TransactionForm = ({uid}) => {
   const[name,setName]=useState('')
   const[amount,setAmount]=useState('')
   const {response,addDocument} =useFirestore('transactions')
+  const {docs,error,isPending} =useCollection('transactions')
 
   const handleSubmit=(e)=>{
     e.preventDefault()
@@ -18,7 +19,7 @@ const TransactionForm = ({uid}) => {
       setName('')
     }
   },[response.success])
- const {docs} =useCollection('transactions')
+ 
 
   console.log(docs)
   return (
