@@ -35,10 +35,12 @@ export const useSignup=()=>{
        }
     
    }
-   return{error,isPending,signup}
+
    useEffect(()=>{
     return ()=>setIsCancelled(true)
    },[])
+   return{error,isPending,signup}
+   
 
   
 }
