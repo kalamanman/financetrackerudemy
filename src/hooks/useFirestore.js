@@ -18,6 +18,8 @@ const initialState = {
         case 'ERROR' :
             return{...state,error:action.payload,
                 success:null,isPending:false,document:null}   
+        case 'DELETED_DOCUMENT' :
+            return{...state,success:true}        
                 default:
                     return {...state}
     }
@@ -63,9 +65,18 @@ export const useFirestore = (collection) => {
    //Delete a document
 
    const deleteDocument =async (id)=>{
+    let ref = storeRef.collection(collection)
+    try{
+        await ref.doc(id).delete()
+ dispatchIfNotCancelled({type:'DELETED_DOCUMENT'})
+    }catch(err){
+        dispatchIfNotCancelled({type:'ERROR',payload:err.message})
+        
+    
 
    }
-
+   
+   }
 
 
     

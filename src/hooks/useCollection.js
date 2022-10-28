@@ -10,10 +10,10 @@ export const useCollection =(collection,_query,_orderBy)=>{
     useEffect(()=>{
 let ref = storeRef.collection(collection)
 if(uidEqualsUserId){
-    ref=ref.where(...uidEqualsUserId )
+   ref=ref.where(...uidEqualsUserId )
 }
 if(descending){
-    ref.orderBy(...descending)
+    ref=ref.orderBy(...descending)
 }
 const unsub =ref.onSnapshot((snapshot)=>{
     setIsPending(true)
