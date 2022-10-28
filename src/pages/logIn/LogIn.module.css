@@ -5,6 +5,7 @@
 .login-form label {
     
     margin-bottom: 20px;
+    color: #1f9751;
 }
 .login-form span{
     display: block;
@@ -16,8 +17,16 @@
     width: 100%;
     font-size:1.2em;
     color: #777;
+    border-color: #1f9751;;
 }
 
 .login-form button{
     display: block;
+}
+.login-form h2 {
+   color: #1f9751;;
+}
+ input:focus{
+    border-width: 0px;
+ ;
 }

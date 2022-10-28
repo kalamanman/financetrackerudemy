@@ -3,7 +3,7 @@
     margin: 60px auto;
 }
 .signup label {
-    
+   color: #1f9751;
     margin-bottom: 20px;
 }
 .signup span{
@@ -15,9 +15,12 @@
     padding:0.3em 2em;
     width: 100%;
     font-size:1.2em;
-    color: #777;
+    color: #1f9751;;
 }
 
 .signup button{
     display: block;
+}
+h2{
+    color:#1f9751;
 }
