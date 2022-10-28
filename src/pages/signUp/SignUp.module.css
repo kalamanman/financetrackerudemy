@@ -15,7 +15,8 @@
     padding:0.3em 2em;
     width: 100%;
     font-size:1.2em;
-    color: #1f9751;;
+    color: #1f9751;
+    border-radius: 5px;
 }
 
 .signup button{
