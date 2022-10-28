@@ -29,7 +29,7 @@ const LogIn = () => {
             <input type="email" name="email" id="email"
               value={email}
               required
-              onChange={(e)=>setEmail(e.target.value)}
+              onChange={(e)=>setEmail(e.target.value.toLowerCase())}
             />
         </label>
         <label>
