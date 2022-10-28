@@ -41,6 +41,7 @@
 .side h3 {
     color:#1f9751;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 .side button{
     display: block;
@@ -72,8 +73,11 @@
 }
 .transactions .name {
     color: #777;
-    font-size: 1.4 em;
+    font-size: 1.4em;
 
+}
+.transactions .createdAt{
+  color:#000
 }
 .transactions .amount{
  margin-left: auto;
