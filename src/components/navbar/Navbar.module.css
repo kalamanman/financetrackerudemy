@@ -24,6 +24,10 @@ box-sizing: border-box;
     letter-spacing: 1px;
 
 }
+.title span{
+    font-size: 0.4em;
+    margin-left: 2em;
+}
 
 .navbar button , .navbar a{
     margin-left: 16px;

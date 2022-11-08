@@ -25,6 +25,7 @@ const TransactionForm = ({uid}) => {
     <div>
      
         <h3>Add a Transaction</h3>
+        
         <form onSubmit={handleSubmit}>
             <label>
                 <span>Transaction Name :</span>

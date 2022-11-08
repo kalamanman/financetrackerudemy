@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <nav  className={styles.navbar}>
         <ul>
-            <li className={styles.title}>myMoney</li>
+            <li className={styles.title}>myMoney<span>BY K Newman &copy;</span></li>
             { !user ?
               (<>
             <li><Link to='/login'>Login</Link></li>
