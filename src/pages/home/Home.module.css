@@ -7,7 +7,9 @@
 
 .content{
     flex:2;
-    
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
     padding-right: 30px;
 }
 
@@ -59,6 +61,7 @@
 .side .aside li{
     margin: 10px;
 }
+
 .transactions li{
     margin: 30px auto;
     border: 1px solid #f2f2f2;
