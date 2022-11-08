@@ -13,6 +13,7 @@
 .signup input{
     display: block;
     padding:0.3em 2em;
+    margin-bottom: 0.8em;
     width: 100%;
     font-size:1.2em;
     color: #1f9751;
