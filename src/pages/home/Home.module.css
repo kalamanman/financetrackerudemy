@@ -10,8 +10,9 @@
     max-height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    padding-right: 30px;
-}
+    scrollbar-color: #1f9751 #fff;
+    
+    padding-right: 30px;}
 
 .side{
     flex:1;
