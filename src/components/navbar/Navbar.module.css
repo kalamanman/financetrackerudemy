@@ -32,6 +32,7 @@ box-sizing: border-box;
 .navbar button , .navbar a{
     margin-left: 16px;
     color: #1f9751;
+    border-width: 0px;
 }
 
 
