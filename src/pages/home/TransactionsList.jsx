@@ -7,9 +7,11 @@ const TransactionsList = ({transactions}) => {
   return (
         <ul className ={styles.transactions}>
          { transactions.map(transaction=>(
+         
             <li key={transaction.id}>
+               
                 <span className={styles.name} >{transaction.name} </span>
-                
+              <span className={styles.date}>{transaction.createdAt.toDate().toDateString()}</span>
                 <span className={styles.amount} >$ {transaction.amount}</span>
             
                 <button onClick={()=>deleteDocument(transaction.id)}>X</button>

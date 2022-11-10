@@ -84,8 +84,14 @@
     font-size: 1.4em;
 
 }
-.transactions .createdAt{
-  color:#000
+.transactions .date{
+    position: absolute;
+    color:#337;
+    opacity: 0.6;
+    font-size: 0.1;
+    bottom: 0;
+    
+    
 }
 .transactions .amount{
  margin-left: auto;
