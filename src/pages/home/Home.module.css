@@ -7,14 +7,16 @@
 }
 
 .content{
-    max-height: 600px;
+    
     flex:2;
     
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-color: #effaf0 #fff;
     
-    padding-right: 30px;}
+    padding-right: 30px;
+    
+}
 
     .content:hover{
         scrollbar-color: #1f9751 #fff;
@@ -80,6 +82,7 @@
     border-left: 4px solid #1f9751;
     overflow: hidden;
     position: relative;
+    
     
 }
 .transactions .name {

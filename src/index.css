@@ -6,7 +6,13 @@ body {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  /*background-image: url('./assets/money.jpg'); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   
+  opacity: 1;8 */
+  background-color:rgba(213, 223, 220, 0.786)
 }
 
 
