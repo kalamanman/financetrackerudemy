@@ -6,7 +6,20 @@ import 'firebase/auth'
 
 const firebaseConfig = {
 
- //your config goes here
+    apiKey: "AIzaSyCPQf97769UKBPD0C0X8gbWH1bcth-MQNQ",
+
+    authDomain: "mymoney-24acf.firebaseapp.com",
+  
+    databaseURL: "https://mymoney-24acf-default-rtdb.firebaseio.com",
+  
+    projectId: "mymoney-24acf",
+  
+    storageBucket: "mymoney-24acf.appspot.com",
+  
+    messagingSenderId: "1061592144517",
+  
+    appId: "1:1061592144517:web:12bd792d5f4075a1f267ec"
+  
 
 
  
