@@ -22,7 +22,7 @@ const TransactionForm = ({uid}) => {
 
  
   return (
-    <div>
+    <div >
      
         <h3>Add a Transaction</h3>
         

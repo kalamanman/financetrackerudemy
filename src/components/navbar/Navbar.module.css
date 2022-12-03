@@ -8,12 +8,13 @@ box-sizing: border-box;
  .navbar ul{
    display: flex;
    margin: 0 auto;
-   min-width: 960px;
+   
    align-items: center;
    list-style-type: none;
    color: #1f9751;
    font-weight: bold;
 }
+
 .title{
     font-size: 1.5em;
     color: #1f9751;
@@ -30,7 +31,7 @@ box-sizing: border-box;
 }
 
 .navbar button , .navbar a{
-    margin-left: 16px;
+    margin:0 3rem;
     color: #1f9751;
     border-width: 0px;
 }

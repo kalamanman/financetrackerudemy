@@ -2,14 +2,12 @@
     display: flex;
     max-width: 960px;
     margin: 60px auto;
-    max-height: 70vh;
     
 }
 
 .content{
-    max-height: 600px;
     flex:2;
-    
+    max-height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-color: #effaf0 #fff;
@@ -21,13 +19,12 @@
     }
 
 .side{
-    
     flex:1;
     
     padding-left: 30px;
 }
 .side form {
-    padding: 20px;
+    padding: 10px;
     background-color: #1f9751;
     border-radius: 10px;
 }
@@ -111,5 +108,63 @@
     padding: 4px 8px;
     border-radius: 50%;
     border: none;
+    
+}
+@media(max-width:800px){
+    .container{
+        margin: 2rem auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        max-height: 80vh;
+        overflow-y: hidden;
+        align-items: center;
+    }
+    .transactions{
+        
+        padding: 2rem 1rem;
+        margin-right: 1rem;
+        width: 100%;
+    }
+    .transactions li{
+        margin: 10px auto;
+        border: 1px solid #f2f2f2;
+        box-shadow: 3px 3px 5px rgba(50,50,50,0.1);
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-left: 3px solid #1f9751;
+        overflow: hidden;
+        position: relative;
+    }
+    .side{
+        flex: 1;
+        order:1;
+        text-decoration: center;
+        padding: 5px 10px;
+        width: 80vw;
+    }
+    .content{
+        flex: 3;
+        order: 2;
+        margin-top: 0;
+        margin: 1rem auto;
+        max-height: 240px;
+        min-width: 80%;
+    }
+    .side input , .side select {
+        display: block;
+        width: 92%;
+        font-size: 0.8em;
+        
+        padding: 5px 1px;
+        margin-top: 5px;
+        color: #555;
+        border: 0;
+        border-radius: 5px;
+    }
+    .side button{
+        width: 92%;
+    }
     
 }
