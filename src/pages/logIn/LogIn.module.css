@@ -18,7 +18,7 @@
     padding:0.3em 2em;
     margin-bottom: 0.8em;
     width: 100%;
-    font-size:1.2em;
+    font-size:1rem;
     color: #1f9751;
     border-radius: 5px
 }
@@ -28,4 +28,9 @@
 }
 .login-form h2 {
    color: #1f9751;;
+}
+@media(max-width:700px){
+    .login-form{
+        width:96%
+    }
 }
