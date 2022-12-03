@@ -5,7 +5,7 @@
     margin: 60px auto;
 }
 .login-form label {
-    
+    display: block;
     margin-bottom: 20px;
     color: #1f9751;
 }
@@ -29,8 +29,8 @@
 .login-form h2 {
    color: #1f9751;;
 }
-@media(max-width:700px){
+@media(max-width:900px){
     .login-form{
-        width:96%
+        min-width:96%
     }
 }
